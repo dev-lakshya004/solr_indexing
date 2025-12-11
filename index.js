@@ -80,7 +80,7 @@ app.post("/solr_index/create-core", async (req, res) => {
         const SOLR_URL = `http://localhost:8983/solr`;
 
         await axios.get(
-            `${SOLR_URL}/admin/cores?action=CREATE&name=${coreName}&configSet=_default`
+            `${SOLR_URL}/admin/cores?action=CREATE&name=${coreName}&configSet=_default&configSetBaseDir=/opt/solr-8.9.0/server/solr/configsets`
         );
 
         return res.json({ message: `Core '${coreName}' created successfully` });
