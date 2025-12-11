@@ -67,7 +67,7 @@ app.post('/solr_index/reindex', upload.single('file'), async (req, res) => {
     }
 });
 
-app.post("/create-core", async (req, res) => {
+app.post("/solr_index/create-core", async (req, res) => {
     try {
         const { coreName } = req.body;
 
@@ -94,7 +94,7 @@ app.post("/create-core", async (req, res) => {
     }
 });
 
-app.post("/index", upload.single("file"), async (req, res) => {
+app.post("/solr_index/index", upload.single("file"), async (req, res) => {
     try {
         const { coreName } = req.body;
 
