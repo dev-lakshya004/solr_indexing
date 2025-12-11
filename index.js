@@ -17,7 +17,7 @@ if (!fs.existsSync('uploads')) {
 const upload = multer({ dest: 'uploads/' });
 
 
-app.post('/reindex', upload.single('file'), async (req, res) => {
+app.post('/solr_index/reindex', upload.single('file'), async (req, res) => {
     try {
         const SOLR_CORE = req.query.core;
 
